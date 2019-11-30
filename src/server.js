@@ -6,8 +6,6 @@ let app = express();
 app.use(express.json())
 app.post('/scrape', async function (req, res) {
 
-    url = 'https://devonfw.com/website/pages/welcome/welcome.html';
-
     const body = req.body;
     if (!(body.urls && body.urls.length)) {
         res.status(400).send('Bad request');
