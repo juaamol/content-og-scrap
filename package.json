@@ -4,8 +4,10 @@
   "description": "Get the value of open graph tags from pages",
   "main": "index.js",
   "scripts": {
+    "start": "node src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": { "node": "10.5.0" },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/juaamol/content-og-scrap.git"
