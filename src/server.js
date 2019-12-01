@@ -9,6 +9,7 @@ app.options('/scrape', function(req, res) {
     .set('Access-Control-Allow-Origin', '*')
     .set('Access-Control-Allow-Methods', 'POST')
     .set('Access-Control-Allow-Headers', 'Origin, Content-Type, X-Auth-Token')
+    .send()
 });
 
 app.post('/scrape', async function (req, res) {
