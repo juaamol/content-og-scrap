@@ -4,6 +4,13 @@ let cheerio = require('cheerio');
 let app = express();
 
 app.use(express.json())
+app.options('/scrape', function(req, res) {
+    res.type('text/plain')
+    .set('Access-Control-Allow-Origin', '*')
+    .set('Access-Control-Allow-Methods', 'POST')
+    .set('Access-Control-Allow-Headers', 'Origin, Content-Type, X-Auth-Token')
+});
+
 app.post('/scrape', async function (req, res) {
 
     const body = req.body;
@@ -34,9 +41,9 @@ app.post('/scrape', async function (req, res) {
 
     res.type('application/json')
         .status('200')
-        .set('Access-Control-Allow-Origin: *')
-        .set('Access-Control-Allow-Methods: POST')
-        .set('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token')
+        .set('Access-Control-Allow-Origin', '*')
+        .set('Access-Control-Allow-Methods', 'POST')
+        .set('Access-Control-Allow-Headers', 'Origin, Content-Type, X-Auth-Token')
         .send(JSON.stringify({ foundMetas: allMetas }))
 })
 
