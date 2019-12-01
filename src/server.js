@@ -34,6 +34,9 @@ app.post('/scrape', async function (req, res) {
 
     res.type('application/json')
         .status('200')
+        .set('Access-Control-Allow-Origin: *')
+        .set('Access-Control-Allow-Methods: POST')
+        .set('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token')
         .send(JSON.stringify({ foundMetas: allMetas }))
 })
 
